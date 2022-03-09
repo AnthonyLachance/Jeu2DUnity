@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaekSpot : MonoBehaviour
+public class WeakSpot : MonoBehaviour
 {
     public GameObject obecjToDestroy;
     private void OnTriggerEnter2D(Collider2D collision)
