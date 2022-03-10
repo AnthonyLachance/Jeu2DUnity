@@ -4,6 +4,7 @@ public class EnnemyPatrol : MonoBehaviour
 {
     public float speed;
     public Transform[] waypoints;
+    public int damageOnCollision = 20;
 
     public SpriteRenderer graphics;
     private Transform target;
@@ -32,6 +33,16 @@ public class EnnemyPatrol : MonoBehaviour
             target = waypoints[destPoint];
             // Seul ajout pour que le serpent regarde du coté ou il va. (avec la definition de la variable "public SpriteRenderer graphics;")
             graphics.flipX = !graphics.flipX;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            PlayerHealth playerHealth = collision.transform.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(damageOnCollision);
+
         }
     }
 }

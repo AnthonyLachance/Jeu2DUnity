@@ -2993,6 +2993,7 @@ MonoBehaviour:
   - {fileID: 538017438}
   - {fileID: 1967109499}
   - {fileID: 1738708245}
+  damageOnCollision: 20
   graphics: {fileID: 217503400}
 --- !u!61 &217503399
 BoxCollider2D:
@@ -3004,7 +3005,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00010681152, y: -0.29848424}
@@ -3567,6 +3568,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  invincibilityFlashDelay: 0.2
+  invincibleTimeAfterHit: 2.5
+  isInvincible: 0
+  graphics: {fileID: 715726127}
   healthBar: {fileID: 170945839}
 --- !u!1 &851231853
 GameObject:
@@ -4048,7 +4053,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025881767, y: 0.014285088}
+  m_Offset: {x: 0.017499462, y: 0.013357341}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4059,7 +4064,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6772003, y: 0.0940752}
+  m_Size: {x: 0.5689671, y: 0.095930696}
   m_EdgeRadius: 0
 --- !u!114 &1449959058
 MonoBehaviour:
