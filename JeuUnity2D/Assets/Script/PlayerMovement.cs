@@ -6,25 +6,29 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     public float jumpForce;
     private bool isGrounded;
-
+    
     public Rigidbody2D rb;
-    public Transform groundCheckLeft;
-    public Transform groundCheckRight;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask collisionLayers;
+
+
 
     private Vector3 velocity = Vector3.zero;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    private float horizontalMovement;
 
-    void FixedUpdate()
+    void Update()
     {
-        // Créer une boite de colision (entre les 2 indice) qui envoie true en cas de colision
-        isGrounded = Physics2D.OverlapArea(groundCheckLeft.position, groundCheckLeft.position);
+        
 
-        // On défini une variable qui est le mouvement horizontale : Sur l'axe horizontale * Vitesse * Temps
-        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;           
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            isJumping = true;
+        }
 
-        MovePlayer(horizontalMovement);
 
         Flip(rb.velocity.x);
 
@@ -32,14 +36,21 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", characterVelocity);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isJumping = true;
-        }
+
+        // On défini une variable qui est le mouvement horizontale : Sur l'axe horizontale * Vitesse * Temps
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+
+        // Créer une boite de colision (entre les 2 indice) qui envoie true en cas de colision
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+
+
+        MovePlayer(horizontalMovement);
+
     }
 
+    
     void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
@@ -65,4 +76,11 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+
 }
