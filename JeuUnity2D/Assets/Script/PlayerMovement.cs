@@ -3,10 +3,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
+    public float climbSpeed;
     private bool isJumping;
     public float jumpForce;
     private bool isGrounded;
-    
+
+    [HideInInspector]
+    public bool isClimbing;
+
     public Rigidbody2D rb;
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     private float horizontalMovement;
+    private float verticalMovement;
 
     void Update()
     {
@@ -34,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         float characterVelocity = Mathf.Abs(rb.velocity.x);
         animator.SetFloat("Speed", characterVelocity);
+        animator.SetBool("isClimbing", isClimbing);
     }
 
     void FixedUpdate()
@@ -41,25 +47,35 @@ public class PlayerMovement : MonoBehaviour
 
         // On défini une variable qui est le mouvement horizontale : Sur l'axe horizontale * Vitesse * Temps
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.deltaTime;
 
         // Créer une boite de colision (entre les 2 indice) qui envoie true en cas de colision
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
 
-        MovePlayer(horizontalMovement);
+        MovePlayer(horizontalMovement, verticalMovement);
 
     }
 
     
-    void MovePlayer(float _horizontalMovement)
+    void MovePlayer(float _horizontalMovement, float _verticalMovement)
     {
+        if(!isClimbing) { 
+        // Code qui deplace le joeur de gauche a droite
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
 
-        if(isJumping == true)
-        {
+            if(isJumping)
+            {
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
+            }
+        }
+        else
+        {
+            // Déplacement verticale haut en bas
+            Vector3 targetVelocity = new Vector2(0, _verticalMovement);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         }
     }
 
