@@ -21,9 +21,26 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public CapsuleCollider2D playerCollider;
 
     private float horizontalMovement;
     private float verticalMovement;
+
+
+
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        // Code d'erreur si jamais ya un bug et qu'il y a 2 inventaire
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+        }
+
+        instance = this;
+    }
+
 
     void Update()
     {

@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         //TEST QUI FAIT QUE LORSQUE L'ON APPUIE SUR UNE TOUCHE ON APPEL LA FONCTION TAKEDAMAGE ET ON PERD 10 PV, MAIS BON CEST SEULEMENT POUR TESTER LA HEALTHBAR
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10);
+            TakeDamage(50);
         }
     }
 
@@ -76,13 +76,14 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void Die()
-    {
+    {  
         //Bloquer les mouvements du perso
-
+        PlayerMovement.instance.enabled = false;
         //Jouer l'animation d'élimination
-
+        PlayerMovement.instance.animator.SetTrigger("Die");
         //empecher les interactions physique avec les autres object de la scene
-
+        PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        PlayerMovement.instance.playerCollider.enabled = false;
     }
 
     public IEnumerator InvincibilityFlash()
