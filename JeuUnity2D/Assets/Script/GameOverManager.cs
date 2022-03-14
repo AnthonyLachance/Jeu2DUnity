@@ -39,9 +39,10 @@ public class GameOverManager : MonoBehaviour
         gameOverUI.SetActive(false);
     }
     public void MainMenuButton()
-    { 
+    {
         // Retour au menu principal
-
+        DontDestroyOnLoadScene.instance.RemoveFromOnDestroyOnLoad();
+        SceneManager.LoadScene("MainMenu");
     }
     public void QuitButton()
     {

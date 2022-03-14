@@ -83,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
         PlayerMovement.instance.animator.SetTrigger("Die");
         //empecher les interactions physique avec les autres object de la scene
         PlayerMovement.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        PlayerMovement.instance.rb.velocity = Vector3.zero;
         PlayerMovement.instance.playerCollider.enabled = false;
         GameOverManager.instance.OnPlayerDeath();
     }
