@@ -44,9 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        // On défini une variable qui est le mouvement horizontale : Sur l'axe horizontale * Vitesse * Temps
+        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.fixedDeltaTime;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !isClimbing)
         {
             isJumping = true;
         }
@@ -61,11 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        // On défini une variable qui est le mouvement horizontale : Sur l'axe horizontale * Vitesse * Temps
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        verticalMovement = Input.GetAxis("Vertical") * climbSpeed * Time.deltaTime;
-
         // Créer une boite de colision (entre les 2 indice) qui envoie true en cas de colision
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 

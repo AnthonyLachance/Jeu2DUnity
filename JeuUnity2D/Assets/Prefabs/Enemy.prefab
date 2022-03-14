@@ -365,7 +365,7 @@ MonoBehaviour:
   - {fileID: 5757124166753767169}
   - {fileID: 5757124165324899556}
   - {fileID: 5757124165570077834}
-  damageOnCollision: 20
+  damageOnCollision: 100
   graphics: {fileID: 5757124167368140599}
 --- !u!95 &5757124167368140597
 Animator:
