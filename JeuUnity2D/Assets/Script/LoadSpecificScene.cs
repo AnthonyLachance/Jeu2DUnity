@@ -21,6 +21,7 @@ public class LoadSpecificScene : MonoBehaviour
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(loadNextScene());
+            interactUI.enabled = false;
         }
     }
 
@@ -43,9 +44,9 @@ public class LoadSpecificScene : MonoBehaviour
     }
 
     public IEnumerator loadNextScene()
-    {
-        
-        fadeSystem.SetTrigger("FadeIn");     
+    {       
+        fadeSystem.SetTrigger("FadeIn");
+        fadeSystem.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
         
