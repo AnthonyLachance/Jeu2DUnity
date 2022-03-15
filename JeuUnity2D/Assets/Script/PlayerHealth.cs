@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public AudioClip sound;
     public int maxHealth = 100;
     public int currentHealth;
     public float invincibilityFlashDelay = 0.2f;
@@ -44,7 +44,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (!isInvincible) { 
+        if (!isInvincible) {
+
+            AudioManager.instance.PlayClipAt(sound, transform.position);
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
 

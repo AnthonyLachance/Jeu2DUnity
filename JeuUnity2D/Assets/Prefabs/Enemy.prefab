@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c92df354e93b02439d5901d6849f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 46664bde513de5c47aab403b2bb40944, type: 3}
   obecjToDestroy: {fileID: 5757124166457325042}
 --- !u!1 &5757124166457325042
 GameObject:
@@ -399,4 +400,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c92df354e93b02439d5901d6849f1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
   obecjToDestroy: {fileID: 0}

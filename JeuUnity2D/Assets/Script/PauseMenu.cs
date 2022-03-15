@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject settingsWindow;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -51,4 +52,13 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void OpenSettingsWindow()
+    {
+        settingsWindow.SetActive(true);
+    }
+
+    public void CloseSettingsWindow()
+    {
+        settingsWindow.SetActive(false);
+    }
 }
