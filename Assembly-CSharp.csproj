@@ -79,6 +79,7 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\EnnemyPatrol.cs" />
+    <Compile Include="Assets\LevelSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
