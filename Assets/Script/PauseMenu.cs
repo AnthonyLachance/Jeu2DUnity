@@ -46,8 +46,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void LoadMainMenu()
-    {
-        DontDestroyOnLoadScene.instance.RemoveFromOnDestroyOnLoad();
+    {      
         Resume();
         SceneManager.LoadScene("MainMenu");
     }

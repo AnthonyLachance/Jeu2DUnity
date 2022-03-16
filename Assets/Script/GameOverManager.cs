@@ -21,11 +21,6 @@ public class GameOverManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        if (CurrentSceneManager.instance.isPlayerPresentByDefault)
-        {
-            DontDestroyOnLoadScene.instance.RemoveFromOnDestroyOnLoad();
-        }
-
         gameOverUI.SetActive(true);
     }
 
@@ -40,8 +35,7 @@ public class GameOverManager : MonoBehaviour
     }
     public void MainMenuButton()
     {
-        // Retour au menu principal
-        DontDestroyOnLoadScene.instance.RemoveFromOnDestroyOnLoad();
+        // Retour au menu principal      
         SceneManager.LoadScene("MainMenu");
     }
     public void QuitButton()

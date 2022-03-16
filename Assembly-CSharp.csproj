@@ -57,9 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Chest.cs" />
-    <Compile Include="Assets\Script\PlayerSpawn.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
-    <Compile Include="Assets\Script\DontDestroyOnLoadScene.cs" />
     <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\CurrentSceneManager.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
@@ -79,7 +77,8 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\EnnemyPatrol.cs" />
-    <Compile Include="Assets\LevelSelector.cs" />
+    <Compile Include="Assets\Script\LevelSelector.cs" />
+    <Compile Include="Assets\Script\LoadAndSaveData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

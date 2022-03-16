@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CurrentSceneManager : MonoBehaviour
-{
-    public bool isPlayerPresentByDefault;
+{   
     public int coinsPickedUpInThisSceneCount;
+    public Vector3 respawnPoint;
 
 
     public static CurrentSceneManager instance;
@@ -19,10 +17,9 @@ public class CurrentSceneManager : MonoBehaviour
         }
 
         instance = this;
-      
+
+
+        respawnPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
-
-
-
-    
+  
 }
