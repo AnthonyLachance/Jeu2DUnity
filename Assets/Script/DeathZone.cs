@@ -15,9 +15,11 @@ public class DeathZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerHealth.instance.GonnaDie();
             StartCoroutine(ReplacePlayer(collision));
         }
     }
+
 
     private IEnumerator ReplacePlayer(Collider2D collision)
     {

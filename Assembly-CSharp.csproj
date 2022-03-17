@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Chest.cs" />
+    <Compile Include="Assets\Script\LoadAndSaveData.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\CurrentSceneManager.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Script\CheckPoint.cs" />
     <Compile Include="Assets\Script\WeakSpot.cs" />
+    <Compile Include="Assets\Script\LevelSelector.cs" />
     <Compile Include="Assets\Script\Credits.cs" />
     <Compile Include="Assets\Script\Ladder.cs" />
     <Compile Include="Assets\Script\AudioManager.cs" />
@@ -77,8 +79,7 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\EnnemyPatrol.cs" />
-    <Compile Include="Assets\Script\LevelSelector.cs" />
-    <Compile Include="Assets\Script\LoadAndSaveData.cs" />
+    <Compile Include="Assets\Script\SpikeDamage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

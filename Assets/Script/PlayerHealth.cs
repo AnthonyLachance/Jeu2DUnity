@@ -63,6 +63,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void GonnaDie()
+    {
+        AudioManager.instance.PlayClipAt(sound, transform.position);            
+         Die();            
+    }
+
     public void HealPlayer(int amount)
     {
 

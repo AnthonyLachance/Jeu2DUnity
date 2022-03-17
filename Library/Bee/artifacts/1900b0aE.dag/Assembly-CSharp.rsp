@@ -387,6 +387,7 @@
 "Assets/Script/PlayerHealth.cs"
 "Assets/Script/PlayerMovement.cs"
 "Assets/Script/SettingsMenu.cs"
+"Assets/Script/SpikeDamage.cs"
 "Assets/Script/WeakSpot.cs"
 -langversion:9.0
 
