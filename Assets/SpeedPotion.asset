@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e90a86e08cc0f47b592a619801d64a, type: 3}
   m_Name: SpeedPotion
   m_EditorClassIdentifier: 
-  id: 0
-  name: 
-  description: 
-  image: {fileID: 0}
+  id: 2
+  name: Speed Potion
+  description: Potion that increase speed by 50 unit
+  image: {fileID: 21300000, guid: cf8a79e8dc12b5d439978e17c8b4082c, type: 3}
   hpGiven: 0
-  speedGiven: 0
-  speedDuration: 0
+  speedGiven: 50
+  speedDuration: 10
