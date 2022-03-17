@@ -8,7 +8,9 @@ public class Item : ScriptableObject
     public string description;
     public Sprite image;
     public int hpGiven;
+    public int maxHpIncrese;
     public int speedGiven;
-    public float speedDuration;
+    public int damagePower;
+    public int jumpGiven;
 
 }

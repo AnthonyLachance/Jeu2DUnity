@@ -16,6 +16,8 @@ MonoBehaviour:
   name: Health Potion
   description: A potion restoring 20hp.
   image: {fileID: 21300000, guid: 5a2af2e9cd2f06a4c8efdc3f344ce794, type: 3}
-  hpGiven: 20
+  hpGiven: 10
+  maxHpIncrese: 10
   speedGiven: 0
-  speedDuration: 0
+  damagePower: 0
+  jumpGiven: 0
