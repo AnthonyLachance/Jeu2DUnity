@@ -1,11 +1,15 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public int coinsCount;
     public Text coinsCountText;
+    
 
+    public List<Item> content = new List<Item>();
+    public int contentCurrentIndex = 0;
 
     public static Inventory instance;
 
@@ -18,6 +22,32 @@ public class Inventory : MonoBehaviour
         }
 
         instance = this;
+    }
+
+    public void GetNextItem()
+    {
+        contentCurrentIndex++;
+        if (contentCurrentIndex > content.Count - 1)
+        {
+            contentCurrentIndex = 0;
+        }
+    }
+
+    public void GetPreviousItem()
+    {
+        contentCurrentIndex--;
+        if (contentCurrentIndex < content.Count - 1)
+        {
+            contentCurrentIndex = content.Count -1;
+        }
+    }
+
+    public void ConsumeItem()
+    {
+        Item currentItem = content[0];
+        PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
+        PlayerMovement.instance.moveSpeed += currentItem.speedGiven;
+        content.Remove(currentItem);
     }
 
     public void AddCoins(int count)

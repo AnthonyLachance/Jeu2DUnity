@@ -83,6 +83,7 @@
     <Compile Include="Assets\Script\Dialogue.cs" />
     <Compile Include="Assets\Script\DialogueTrigger.cs" />
     <Compile Include="Assets\Script\DialogueManager.cs" />
+    <Compile Include="Assets\Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -40,6 +40,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         interactUI.enabled = false;
         isInRange = false;
+        DialogueManager.instance.EndDialogue();
     }
 
 }
