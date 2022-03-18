@@ -56,16 +56,20 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\PlayerEffects.cs" />
     <Compile Include="Assets\Script\Chest.cs" />
     <Compile Include="Assets\Script\LoadAndSaveData.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
+    <Compile Include="Assets\Script\SellButtonItem.cs" />
     <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\CurrentSceneManager.cs" />
+    <Compile Include="Assets\Script\ShopTrigger.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\GameOverManager.cs" />
     <Compile Include="Assets\Script\SettingsMenu.cs" />
     <Compile Include="Assets\Script\DialogueTrigger.cs" />
     <Compile Include="Assets\Script\DeathZone.cs" />
+    <Compile Include="Assets\Script\ShopManager.cs" />
     <Compile Include="Assets\Script\HealPowerUp.cs" />
     <Compile Include="Assets\Script\LoadSpecificScene.cs" />
     <Compile Include="Assets\Script\PickUpCoin.cs" />
@@ -78,14 +82,13 @@
     <Compile Include="Assets\Script\DialogueManager.cs" />
     <Compile Include="Assets\Script\Credits.cs" />
     <Compile Include="Assets\Script\Ladder.cs" />
+    <Compile Include="Assets\Script\PickUpItem.cs" />
     <Compile Include="Assets\Script\AudioManager.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\EnnemyPatrol.cs" />
-    <Compile Include="Assets\Script\PickUpItem.cs" />
-    <Compile Include="Assets\Script\PlayerEffects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
