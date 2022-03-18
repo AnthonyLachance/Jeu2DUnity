@@ -9,12 +9,13 @@ public class Inventory : MonoBehaviour
     
 
     public List<Item> content = new List<Item>();
-    public int contentCurrentIndex = 0;
+    private int contentCurrentIndex = 0;
     public Image itemImageUI;
     public Text itemNameUI;
     public static Inventory instance;
     public Sprite emptyItemImage;
 
+    public PlayerEffects playerEffect;  
     private void Awake()
     {
         // Code d'erreur si jamais ya un bug et qu'il y a 2 inventaire
@@ -86,7 +87,7 @@ public class Inventory : MonoBehaviour
 
         Item currentItem = content[0];
         PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
-        PlayerMovement.instance.moveSpeed += currentItem.speedGiven;
+        playerEffect.AddSpeed(currentItem.speedGiven, currentItem.speedDuration);
         content.Remove(currentItem);
         GetNextItem();
         UpdateInventoryUI();
@@ -106,8 +107,6 @@ public class Inventory : MonoBehaviour
 
     public void UpdateTextUI()
     {
-
-
         coinsCountText.text = coinsCount.ToString();
     }
 }
