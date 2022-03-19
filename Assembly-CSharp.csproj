@@ -78,6 +78,7 @@
     <Compile Include="Assets\Script\Dialogue.cs" />
     <Compile Include="Assets\Script\CheckPoint.cs" />
     <Compile Include="Assets\Script\WeakSpot.cs" />
+    <Compile Include="Assets\Script\ItemsDatabase.cs" />
     <Compile Include="Assets\Script\LevelSelector.cs" />
     <Compile Include="Assets\Script\DialogueManager.cs" />
     <Compile Include="Assets\Script\Credits.cs" />
@@ -89,6 +90,9 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\EnnemyPatrol.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Imports\Cave Platformer Tileset\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

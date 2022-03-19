@@ -7,6 +7,7 @@ public class Item : ScriptableObject
     public string itemName;
     public string description;
     public Sprite image;
+    public int price;
     public int hpGiven;
     public int maxHpIncrese;
     public int speedGiven;

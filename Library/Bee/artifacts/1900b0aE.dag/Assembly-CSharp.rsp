@@ -381,6 +381,7 @@
 "Assets/Script/HealthBar.cs"
 "Assets/Script/Inventory.cs"
 "Assets/Script/Item.cs"
+"Assets/Script/ItemsDatabase.cs"
 "Assets/Script/Ladder.cs"
 "Assets/Script/LevelSelector.cs"
 "Assets/Script/LoadAndSaveData.cs"

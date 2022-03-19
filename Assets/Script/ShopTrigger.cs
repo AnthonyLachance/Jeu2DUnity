@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class ShopTrigger : MonoBehaviour
 {
-    private Text interactUI;
     private bool isInRange;
+
+    private Text interactUI;
 
     public string pnjName;
     public Item[] itemsToSell;
@@ -24,23 +25,21 @@ public class ShopTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (collision.CompareTag("Player"))
         {
-            interactUI.enabled = true;
             isInRange = true;
+            interactUI.enabled = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
         if (collision.CompareTag("Player"))
         {
-            interactUI.enabled = false;
             isInRange = false;
+            interactUI.enabled = false;
             ShopManager.instance.CloseShop();
         }
     }
-
 }
+
